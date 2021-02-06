@@ -1,0 +1,27 @@
+name: 'Time Tracker'
+description: 'Track time via git commits'
+author: 'Digital Creative'
+inputs:
+  titlePattern:
+    required: false
+    description: 'pattern to yield the final title'
+    default: '[:duration] capitalize(:title)'
+  durationPattern:
+    required: false
+    description: 'github secret token'
+    default: 'h:mm'
+  scanComments:
+    required: false
+    description: 'also scan for time tags within the PR comments'
+    default: true
+  scanPullRequestBody:
+    required: false
+    description: 'also scan for time tags within the PR body'
+    default: true
+  token:
+    required: true
+    description: 'github secret token'
+    default: 'default value if applicable'
+runs:
+  using: 'node12'
+  main: distribution/index.js
